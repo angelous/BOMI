@@ -17,7 +17,7 @@ return new class extends Migration
             $table->float('weight');
             $table->float('height');
             $table->float('bmi');
-            $table->timestamps('addedAt')->useCurrent();
+            $table->timestamp('addedAt')->useCurrent();
         });
     }
 
