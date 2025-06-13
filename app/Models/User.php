@@ -12,16 +12,16 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
-    protected $table = 'userId';
-    public $incrementing = true;
-    protected $keyType = 'int';
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
     protected $fillable = [
+        'name',
         'email',
         'password',
-        'name',
-        'gender',
-        'userDob'
+        'dob',
     ];
 
     /**
@@ -49,6 +49,6 @@ class User extends Authenticatable
 
     public function records()
     {
-        return $this->hasMany(Record::class, 'userId');
+        return $this->hasMany(Record::class);
     }
 }
